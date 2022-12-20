@@ -1,0 +1,1 @@
+SELECT users.id, COUNT(experiences.id) FROM users JOIN experiences ON users.id = experiences."userId" GROUP BY users.id ORDER BY users.id;
