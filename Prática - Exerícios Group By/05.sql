@@ -1,0 +1,1 @@
+SELECT schools.name AS school, courses.name AS course, COUNT(educations.id) AS "studentsCount" FROM educations JOIN schools ON educations."schoolId" = schools.id JOIN courses ON educations."courseId" = courses.id GROUP BY courses.name, schools.name ORDER BY "studentsCount" DESC LIMIT 3;
