@@ -50,3 +50,9 @@ CREATE TABLE "states" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "cities" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL,
+    "stateId" INTEGER NOT NULL REFERENCES "states"("id")
+);
