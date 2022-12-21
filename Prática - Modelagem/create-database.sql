@@ -26,3 +26,15 @@ CREATE TABLE "transactions" (
     "description" TEXT,
     "cancelled" BOOLEAN NOT NULL
 );
+
+CREATE TABLE "creditCards" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "bankAccountId" INTEGER NOT NULL REFERENCES "bankAccount"("id"),
+    "name" TEXT NOT NULL,
+    "number" VARCHAR(16) NOT NULL UNIQUE,
+    "secutityCode" VARCHAR(3) NOT NULL,
+    "expirationMonth" ENUM(1,2,3,4,5,6,7,8,9,10,11,12) NOT NULL,
+    "expirationYear" INTEGER NOT NULL,
+    "password" TEXT NOT NULL,
+    "limit" INTEGER
+);
