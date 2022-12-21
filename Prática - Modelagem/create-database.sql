@@ -38,3 +38,10 @@ CREATE TABLE "creditCards" (
     "password" TEXT NOT NULL,
     "limit" INTEGER
 );
+
+CREATE TABLE "customerPhones" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "customerId" INTEGER REFERENCES "customers"("id") NOT NULL,
+    "number" TEXT NOT NULL UNIQUE,
+    "type" ENUM("landline", "mobile") NOT NULL,
+);
