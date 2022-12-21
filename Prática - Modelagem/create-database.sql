@@ -45,3 +45,8 @@ CREATE TABLE "customerPhones" (
     "number" TEXT NOT NULL UNIQUE,
     "type" ENUM("landline", "mobile") NOT NULL,
 );
+
+CREATE TABLE "states" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL UNIQUE
+);
