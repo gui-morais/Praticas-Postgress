@@ -7,3 +7,12 @@ CREATE TABLE "customers" (
     "email" TEXT UNIQUE NOT NULL,
     "password" TEXT NOT NULL
 );
+
+CREATE TABLE "bankAccount" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "customerId" INTEGER REFERENCES customers(id) NOT NULL,
+    "accountNumber" TEXT NOT NULL UNIQUE,
+    "agency" TEXT NOT NULL,
+    "openDate" DATE NOT NULL DEFAULT NOW(),
+    "closeDate" DATE
+);
