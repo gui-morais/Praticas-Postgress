@@ -56,3 +56,13 @@ CREATE TABLE "cities" (
     "name" TEXT NOT NULL,
     "stateId" INTEGER NOT NULL REFERENCES "states"("id")
 );
+
+CREATE TABLE "customerAddresses" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "customerId" INTEGER REFERENCES "customers"("id") NOT NULL,
+    "street" TEXT NOT NULL,
+    "number" INTEGER NOT NULL,
+    "complement" TEXT,
+    "postalCode" TEXT NOT NULL,
+    "cityId" INTEGER NOT NULL REFERENCES "cities"("id")
+);
