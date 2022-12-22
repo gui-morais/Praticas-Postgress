@@ -24,3 +24,9 @@ CREATE TABLE "modules" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "projects" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL UNIQUE,
+    "module_id" INTEGER NOT NULL REFERENCES "modules"("id")
+);
