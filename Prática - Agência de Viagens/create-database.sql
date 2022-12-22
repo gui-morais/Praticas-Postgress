@@ -5,3 +5,9 @@ CREATE TABLE "companies" (
     "name" TEXT NOT NULL,
     "code" VARCHAR(3) NOT NULL UNIQUE
 );
+
+CREATE TABLE "airports" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL,
+    "code" VARCHAR(3) NOT NULL UNIQUE
+);
