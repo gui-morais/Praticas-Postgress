@@ -50,3 +50,10 @@ CREATE TABLE "products_cart" (
     "product_id" INTEGER NOT NULL REFERENCES "products"("id"),
     "quantity" INTEGER NOT NULL
 );
+
+CREATE TABLE "addresses" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "cartId" INTEGER NOT NULL REFERENCES "cart"("id"),
+    "userId" INTEGER NOT NULL REFERENCES "users"("id"),
+    "address" TEXT NOT NULL
+);
