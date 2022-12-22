@@ -35,4 +35,11 @@ CREATE TABLE "products" (
 CREATE TABLE "photos" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "url" TEXT NOT NULL
-)
+);
+
+CREATE TABLE "photos_relations" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "productId" INTEGER NOT NULL REFERENCES "products"("id"),
+    "photoId" INTEGER NOT NULL REFERENCES "photos"("id"),
+    "isMain" BOOLEAN NOT NULL
+);
