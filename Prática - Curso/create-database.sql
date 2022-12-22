@@ -18,4 +18,9 @@ CREATE TABLE "classes_registration" (
     "class_id" INTEGER NOT NULL REFERENCES "classes"("id"),
     "date_entry" DATE NOT NULL,
     "date_exit" DATE
-)
+);
+
+CREATE TABLE "modules" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL UNIQUE
+);
