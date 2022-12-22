@@ -23,3 +23,11 @@ CREATE TABLE "sizes" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "products" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL,
+    "price" INTEGER NOT NULL,
+    "categoryId" INTEGER NOT NULL REFERENCES "categories"("id"),
+    "sizeId" INTEGER NOT NULL REFERENCES "sizes"("id")
+);
