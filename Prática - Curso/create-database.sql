@@ -6,3 +6,8 @@ CREATE TABLE "students" (
     "cpf" VARCHAR(11) NOT NULL UNIQUE,
     "email" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "classes" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "code" TEXT NOT NULL UNIQUE,
+);
