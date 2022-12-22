@@ -43,3 +43,10 @@ CREATE TABLE "photos_relations" (
     "photoId" INTEGER NOT NULL REFERENCES "photos"("id"),
     "isMain" BOOLEAN NOT NULL
 );
+
+CREATE TABLE "products_cart" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "cartId" INTEGER NOT NULL REFERENCES "cart"("id"),
+    "product_id" INTEGER NOT NULL REFERENCES "products"("id"),
+    "quantity" INTEGER NOT NULL
+);
