@@ -18,3 +18,8 @@ CREATE TABLE "categories" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "sizes" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL UNIQUE
+);
