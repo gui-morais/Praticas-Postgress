@@ -13,3 +13,8 @@ CREATE TABLE "cart" (
     "status" ENUM("criada", "paga", "entregue", "cancelada") NOT NULL,
     "date" TIMESTAMP WITH TIME ZONE DEFAULT NOW()
 );
+
+CREATE TABLE "categories" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL UNIQUE
+);
