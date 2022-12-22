@@ -30,3 +30,11 @@ CREATE TABLE "projects" (
     "name" TEXT NOT NULL UNIQUE,
     "module_id" INTEGER NOT NULL REFERENCES "modules"("id")
 );
+
+CREATE TABLE "projects_deliveries" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "student_id" INTEGER NOT NULL REFERENCES "students"("id"),
+    "project_id" INTEGER NOT NULL REFERENCES "projects"("id"),
+    "delivery_time" TIME WITH TIME ZONE NOT NULL,
+    "grade" ENUM("Abaixo das expectativas", "Dentro das Expectativas", "Acima das Expectativas") NOT NULL
+);
