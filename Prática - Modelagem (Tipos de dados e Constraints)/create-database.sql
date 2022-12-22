@@ -31,3 +31,8 @@ CREATE TABLE "products" (
     "categoryId" INTEGER NOT NULL REFERENCES "categories"("id"),
     "sizeId" INTEGER NOT NULL REFERENCES "sizes"("id")
 );
+
+CREATE TABLE "photos" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "url" TEXT NOT NULL
+)
