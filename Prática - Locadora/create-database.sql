@@ -74,3 +74,8 @@ CREATE TABLE "clients" (
     "address_id" INTEGER NOT NULL REFERENCES "addresses"("id"),
     "cpf" VARCHAR(11) NOT NULL UNIQUE
 );
+
+CREATE TABLE "phone_numbers" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "number" TEXT NOT NULL UNIQUE
+);
