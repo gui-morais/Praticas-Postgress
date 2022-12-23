@@ -16,3 +16,9 @@ CREATE TABLE "categories" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "movies" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "title" TEXT NOT NULL UNIQUE,
+    "category_id" INTEGER NOT NULL REFERENCES "categories"("id")
+);
