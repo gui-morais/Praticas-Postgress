@@ -28,3 +28,10 @@ CREATE TABLE "movies_actors" (
     "movie_id" INTEGER NOT NULL REFERENCES "movies"("id"),
     "actor_id" INTEGER NOT NULL REFERENCES "actors"("id")
 );
+
+CREATE TABLE "disks" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "code" TEXT NOT NULL UNIQUE,
+    "barcode" TEXT NOT NULL UNIQUE,
+    "movie_id" INTEGER NOT NULL REFERENCES "movies"("id")
+);
