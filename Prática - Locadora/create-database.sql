@@ -79,3 +79,9 @@ CREATE TABLE "phone_numbers" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "number" TEXT NOT NULL UNIQUE
 );
+
+CREATE TABLE "clients_numbers" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "client_id" INTEGER NOT NULL REFERENCES "clients"("id"),
+    "number_id" INTEGER NOT NULL REFERENCES "phone_numbers"("id")
+);
