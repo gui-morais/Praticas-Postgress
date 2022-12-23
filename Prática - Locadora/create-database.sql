@@ -93,3 +93,10 @@ CREATE TABLE "rentals" (
     "devolution_date" DATE,
     "grade" INTEGER
 );
+
+CREATE TABLE "rentals_disks" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "rental_id" INTEGER NOT NULL REFERENCES "rentals"("id"),
+    "disk_id" INTEGER NOT NULL REFERENCES "disk"("id"),
+    "grade" INTEGER
+);
