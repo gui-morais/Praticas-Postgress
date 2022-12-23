@@ -41,3 +41,9 @@ CREATE TABLE "states" (
     "name" TEXT NOT NULL,
     "country_id" INTEGER NOT NULL REFERENCES "countries"("id")
 );
+
+CREATE TABLE "cities" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL,
+    "state_id" INTEGER NOT NULL REFERENCES "states"("id")
+);
