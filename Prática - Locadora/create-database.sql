@@ -53,3 +53,8 @@ CREATE TABLE "districts" (
     "name" TEXT NOT NULL,
     "city_id" INTEGER NOT NULL REFERENCES "cities"("id")
 );
+
+CREATE TABLE "streets" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL
+);
