@@ -22,3 +22,9 @@ CREATE TABLE "movies" (
     "title" TEXT NOT NULL UNIQUE,
     "category_id" INTEGER NOT NULL REFERENCES "categories"("id")
 );
+
+CREATE TABLE "movies_actors" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "movie_id" INTEGER NOT NULL REFERENCES "movies"("id"),
+    "actor_id" INTEGER NOT NULL REFERENCES "actors"("id")
+);
