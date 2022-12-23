@@ -58,3 +58,12 @@ CREATE TABLE "streets" (
     "id" SERIAL PRIMARY KEY NOT NULL,
     "name" TEXT NOT NULL
 );
+
+CREATE TABLE "addresses" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "number" INTEGER NOT NULL,
+    "street_id" INTEGER NOT NULL REFERENCES "streets"("id"),
+    "district_id" INTEGER NOT NULL REFERENCES "districts"("id"),
+    "postal_code" TEXT NOT NULL,
+    "complement" TEXT
+);
