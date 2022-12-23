@@ -85,3 +85,11 @@ CREATE TABLE "clients_numbers" (
     "client_id" INTEGER NOT NULL REFERENCES "clients"("id"),
     "number_id" INTEGER NOT NULL REFERENCES "phone_numbers"("id")
 );
+
+CREATE TABLE "rentals" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "client_id" INTEGER NOT NULL REFERENCES "clients"("id"),
+    "rent_date" DATE NOT NULL DEFAULT NOW(),
+    "devolution_date" DATE,
+    "grade" INTEGER
+);
