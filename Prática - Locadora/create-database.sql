@@ -35,3 +35,9 @@ CREATE TABLE "disks" (
     "barcode" TEXT NOT NULL UNIQUE,
     "movie_id" INTEGER NOT NULL REFERENCES "movies"("id")
 );
+
+CREATE TABLE "states" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL,
+    "country_id" INTEGER NOT NULL REFERENCES "countries"("id")
+);
