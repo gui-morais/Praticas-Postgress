@@ -67,3 +67,10 @@ CREATE TABLE "addresses" (
     "postal_code" TEXT NOT NULL,
     "complement" TEXT
 );
+
+CREATE TABLE "clients" (
+    "id" SERIAL PRIMARY KEY NOT NULL,
+    "name" TEXT NOT NULL,
+    "address_id" INTEGER NOT NULL REFERENCES "addresses"("id"),
+    "cpf" VARCHAR(11) NOT NULL UNIQUE
+);
